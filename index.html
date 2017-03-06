@@ -274,8 +274,10 @@
 
                                 var tokenLeft = promissoryUnits - (claimedUnits + claimedPrepaidUnits);
                                 var tokenBought = claimedUnits;
-                                $("#tokensLeft").html(tokenLeft);
-                                $("#tokensBought").html(tokenBought);
+                                if (tokenLeft)
+                                    $("#tokensLeft").html(tokenLeft);
+                                if (tokenBought)
+                                    $("#tokensBought").html(tokenBought);
                                 var chartData = {
 
                                     datasets: [{
@@ -439,7 +441,6 @@
 
                                     <div class="row" style="text-align: left">
                                         <div class="col-xs-5 caption-left">
-
                                             <input type="button" id="claim_button" onclick="claim();" value="Claim Tokens" />
                                         </div>
                                     </div>
@@ -452,6 +453,11 @@
         <input type="text" id="claim_value" placeholder="ETH amount"> Gas Price in WEI: <input type="text" id="gas_price" placeholder="Gas Price in WEI" value="200405" />
         <input type="button" id="claim_button" onclick="claim();" value="Claim Tokens" />
     </div>-->
+                                    <br />
+
+
+                                    <span>To learn more about the funding round promissory token please </span> <a style="color:azure" href="https://blog.superdao.io/">visit our blog</a>
+
                                     <br />
                                     <div id='eth_log' style="height:100%; overflow-y: scroll"></div>
                                 </div>
